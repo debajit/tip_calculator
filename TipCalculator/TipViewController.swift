@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TipViewController.swift
 //  TipCalculator
 //
 //  Created by Adhikary, Debajit on 8/6/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TipViewController: UIViewController {
 
     @IBOutlet weak var tipPercentagesControl: UISegmentedControl!
     @IBOutlet weak var billAmountField: UITextField!
