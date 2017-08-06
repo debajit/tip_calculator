@@ -1,5 +1,5 @@
 //
-//  TipViewController.swift
+//  SettingsViewController.swift
 //  TipCalculator
 //
 //  Created by Adhikary, Debajit on 8/6/17.
@@ -8,39 +8,38 @@
 
 import UIKit
 
-class TipViewController: UIViewController {
-
+class SettingsViewController: UIViewController {
+    
     @IBOutlet weak var tipPercentagesControl: UISegmentedControl!
-    @IBOutlet weak var billAmountField: UITextField!
-    @IBOutlet weak var tipAmountLabel: UILabel!
-    @IBOutlet weak var totalAmountWithTipLabel: UILabel!
     
     var settings: Settings {
         return Settings()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupTipPercentagesControl(tipPercentagesControl: tipPercentagesControl)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-
-
-    @IBAction func tapOutsideTextField(_ sender: Any) {
-        view.endEditing(true)
+        // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func updateTotalAmounts() {
-        let billAmount = Double(billAmountField.text!) ?? 0
-        let bill = Bill(amount: billAmount,
-                        tipIndex: tipPercentagesControl.selectedSegmentIndex)
 
-        tipAmountLabel.text = String(format: "%.2f", bill.tipAmount)
-        totalAmountWithTipLabel.text = String(format: "%.2f", bill.amountWithTip)
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+    @IBAction func savePreferredTipIndex() {
+        settings.preferredTipIndex = tipPercentagesControl.selectedSegmentIndex
     }
     
     private func setupTipPercentagesControl(tipPercentagesControl: UISegmentedControl) {
@@ -53,4 +52,3 @@ class TipViewController: UIViewController {
         tipPercentagesControl.selectedSegmentIndex = settings.preferredTipIndex
     }
 }
-

@@ -15,6 +15,8 @@
 		C3701B381F37A6B2009BF366 /* TipCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B371F37A6B2009BF366 /* TipCalculatorTests.swift */; };
 		C3701B431F37A6B2009BF366 /* TipCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B421F37A6B2009BF366 /* TipCalculatorUITests.swift */; };
 		C3701B511F37A6C2009BF366 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B501F37A6C2009BF366 /* Bill.swift */; };
+		C3701B541F37C7C6009BF366 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B531F37C7C6009BF366 /* SettingsViewController.swift */; };
+		C3701B571F37D161009BF366 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B561F37D161009BF366 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		C3701B421F37A6B2009BF366 /* TipCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipCalculatorUITests.swift; sourceTree = "<group>"; };
 		C3701B441F37A6B2009BF366 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3701B501F37A6C2009BF366 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
+		C3701B531F37C7C6009BF366 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C3701B561F37D161009BF366 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +104,8 @@
 			isa = PBXGroup;
 			children = (
 				C3701B521F37C0E8009BF366 /* bill */,
+				C3701B551F37CE33009BF366 /* settings */,
 				C3701B221F37A6B2009BF366 /* AppDelegate.swift */,
-				C3701B241F37A6B2009BF366 /* TipViewController.swift */,
 				C3701B261F37A6B2009BF366 /* Main.storyboard */,
 				C3701B291F37A6B2009BF366 /* Assets.xcassets */,
 				C3701B2B1F37A6B2009BF366 /* LaunchScreen.storyboard */,
@@ -132,8 +136,18 @@
 			isa = PBXGroup;
 			children = (
 				C3701B501F37A6C2009BF366 /* Bill.swift */,
+				C3701B241F37A6B2009BF366 /* TipViewController.swift */,
 			);
 			name = bill;
+			sourceTree = "<group>";
+		};
+		C3701B551F37CE33009BF366 /* settings */ = {
+			isa = PBXGroup;
+			children = (
+				C3701B561F37D161009BF366 /* Settings.swift */,
+				C3701B531F37C7C6009BF366 /* SettingsViewController.swift */,
+			);
+			name = settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +287,8 @@
 				C3701B251F37A6B2009BF366 /* TipViewController.swift in Sources */,
 				C3701B511F37A6C2009BF366 /* Bill.swift in Sources */,
 				C3701B231F37A6B2009BF366 /* AppDelegate.swift in Sources */,
+				C3701B541F37C7C6009BF366 /* SettingsViewController.swift in Sources */,
+				C3701B571F37D161009BF366 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
