@@ -99,13 +99,13 @@
 		C3701B211F37A6B2009BF366 /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				C3701B521F37C0E8009BF366 /* bill */,
 				C3701B221F37A6B2009BF366 /* AppDelegate.swift */,
 				C3701B241F37A6B2009BF366 /* ViewController.swift */,
 				C3701B261F37A6B2009BF366 /* Main.storyboard */,
 				C3701B291F37A6B2009BF366 /* Assets.xcassets */,
 				C3701B2B1F37A6B2009BF366 /* LaunchScreen.storyboard */,
 				C3701B2E1F37A6B2009BF366 /* Info.plist */,
-				C3701B501F37A6C2009BF366 /* Bill.swift */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
@@ -126,6 +126,14 @@
 				C3701B441F37A6B2009BF366 /* Info.plist */,
 			);
 			path = TipCalculatorUITests;
+			sourceTree = "<group>";
+		};
+		C3701B521F37C0E8009BF366 /* bill */ = {
+			isa = PBXGroup;
+			children = (
+				C3701B501F37A6C2009BF366 /* Bill.swift */,
+			);
+			name = bill;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -509,6 +517,7 @@
 				C3701B491F37A6B2009BF366 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3701B4A1F37A6B2009BF366 /* Build configuration list for PBXNativeTarget "TipCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +526,7 @@
 				C3701B4C1F37A6B2009BF366 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3701B4D1F37A6B2009BF366 /* Build configuration list for PBXNativeTarget "TipCalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +535,7 @@
 				C3701B4F1F37A6B2009BF366 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
