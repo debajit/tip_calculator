@@ -28,7 +28,7 @@ class Settings {
 
     private func saveIntegerSetting(key: String, value: Int) {
         store.set(value, forKey: key)
-        store.synchronize()
+        // store.synchronize()
     }
 
 }
