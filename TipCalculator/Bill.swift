@@ -10,7 +10,7 @@
 //
 
 class Bill {
-    static let tipPercentages: [Double] = [15, 20, 25]
+    static let tipPercentages: [Double] = [10, 15, 20, 25]
     
     var amount: Double = 0
     var tipIndex: Int = 0
