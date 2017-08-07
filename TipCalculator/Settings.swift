@@ -23,8 +23,14 @@ class Settings {
         set { saveSetting(key: Settings.LAST_AMOUNT, value: newValue) }
     }
 
+    var lastAmountExpiryTime: Date {
+        get { return dateSetting(key: Settings.LAST_AMOUNT_EXPIRY_TIME) ?? Date(timeIntervalSince1970: TimeInterval(0)) }
+        set { saveSetting(key: Settings.LAST_AMOUNT_EXPIRY_TIME, value: newValue) }
+    }
+
     private static let PREFERRED_TIP_INDEX = "preferred_tip_index"
     private static let LAST_AMOUNT = "last_amount"
+    private static let LAST_AMOUNT_EXPIRY_TIME = "last_amount_expiry_time"
     
     private let store = UserDefaults.standard
 
@@ -40,4 +46,7 @@ class Settings {
         return store.double(forKey: key)
     }
 
+    private func dateSetting(key: String) -> Date? {
+        return store.object(forKey: key) as! Date?
+    }
 }

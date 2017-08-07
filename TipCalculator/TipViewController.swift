@@ -23,7 +23,7 @@ class TipViewController: UIViewController {
         super.viewDidLoad()
         
         setupTipPercentagesControl(tipPercentagesControl: tipPercentagesControl)
-        billAmountField.text = String(settings.lastAmount)
+        restoreRecentAmount()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +42,8 @@ class TipViewController: UIViewController {
         
         // Save the last bill amount
         settings.lastAmount = Double(billAmountField.text!) ?? 0
+        settings.lastAmountExpiryTime = Date(timeIntervalSinceNow: TimeInterval(1.minutes))
+        print("expiry time = \(settings.lastAmountExpiryTime)")
     }
     
     @IBAction func tapOutsideTextField(_ sender: Any) {
@@ -64,6 +66,13 @@ class TipViewController: UIViewController {
         }
         
         tipPercentagesControl.selectedSegmentIndex = settings.preferredTipIndex
+    }
+    
+    private func restoreRecentAmount() {
+        if Date() < settings.lastAmountExpiryTime {
+            billAmountField.text = String(settings.lastAmount)
+            updateTotalAmounts()
+        }
     }
 }
 

@@ -17,6 +17,7 @@
 		C3701B511F37A6C2009BF366 /* Bill.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B501F37A6C2009BF366 /* Bill.swift */; };
 		C3701B541F37C7C6009BF366 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B531F37C7C6009BF366 /* SettingsViewController.swift */; };
 		C3701B571F37D161009BF366 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B561F37D161009BF366 /* Settings.swift */; };
+		C3701B591F380FFA009BF366 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B581F380FFA009BF366 /* Int.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C3701B501F37A6C2009BF366 /* Bill.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bill.swift; sourceTree = "<group>"; };
 		C3701B531F37C7C6009BF366 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C3701B561F37D161009BF366 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		C3701B581F380FFA009BF366 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				C3701B551F37CE33009BF366 /* settings */,
 				C3701B221F37A6B2009BF366 /* AppDelegate.swift */,
 				C3701B261F37A6B2009BF366 /* Main.storyboard */,
+				C3701B5A1F381016009BF366 /* extensions */,
 				C3701B291F37A6B2009BF366 /* Assets.xcassets */,
 				C3701B2B1F37A6B2009BF366 /* LaunchScreen.storyboard */,
 				C3701B2E1F37A6B2009BF366 /* Info.plist */,
@@ -148,6 +151,14 @@
 				C3701B531F37C7C6009BF366 /* SettingsViewController.swift */,
 			);
 			name = settings;
+			sourceTree = "<group>";
+		};
+		C3701B5A1F381016009BF366 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C3701B581F380FFA009BF366 /* Int.swift */,
+			);
+			name = extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 				C3701B251F37A6B2009BF366 /* TipViewController.swift in Sources */,
 				C3701B511F37A6C2009BF366 /* Bill.swift in Sources */,
 				C3701B231F37A6B2009BF366 /* AppDelegate.swift in Sources */,
+				C3701B591F380FFA009BF366 /* Int.swift in Sources */,
 				C3701B541F37C7C6009BF366 /* SettingsViewController.swift in Sources */,
 				C3701B571F37D161009BF366 /* Settings.swift in Sources */,
 			);
