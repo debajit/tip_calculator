@@ -56,8 +56,8 @@ class TipViewController: UIViewController {
         let billAmount = Double(billAmountField.text!) ?? 0
         let bill = Bill(amount: billAmount, tipIndex: tipPercentagesControl.selectedSegmentIndex)
 
-        tipAmountLabel.text = String(format: "%.2f", bill.tipAmount)
-        totalAmountWithTipLabel.text = String(format: "%.2f", bill.amountWithTip)
+        tipAmountLabel.text = bill.tipAmount.asLocaleCurrency
+        totalAmountWithTipLabel.text = bill.amountWithTip.asLocaleCurrency
     }
     
     private func setupTipPercentagesControl(tipPercentagesControl: UISegmentedControl) {
