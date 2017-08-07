@@ -10,6 +10,8 @@ import UIKit
 
 class TipViewController: UIViewController {
 
+    private static let RESTORE_AMOUNT_TEXT_IF_APP_RESTARTED_WITHIN = 10.minutes
+    
     @IBOutlet weak var tipPercentagesControl:   UISegmentedControl!
     @IBOutlet weak var billAmountField:         UITextField!
     @IBOutlet weak var tipAmountLabel:          UILabel!
@@ -42,7 +44,7 @@ class TipViewController: UIViewController {
         
         // Save the last bill amount
         settings.lastAmount = Double(billAmountField.text!) ?? 0
-        settings.lastAmountExpiryTime = Date(timeIntervalSinceNow: TimeInterval(1.minutes))
+        settings.lastAmountExpiryTime = Date(timeIntervalSinceNow: TimeInterval(TipViewController.RESTORE_AMOUNT_TEXT_IF_APP_RESTARTED_WITHIN))
         print("expiry time = \(settings.lastAmountExpiryTime)")
     }
     
