@@ -109,10 +109,10 @@
 		C3701B211F37A6B2009BF366 /* TipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				C3701B261F37A6B2009BF366 /* Main.storyboard */,
 				C3701B521F37C0E8009BF366 /* bill */,
 				C3701B551F37CE33009BF366 /* settings */,
 				C3701B221F37A6B2009BF366 /* AppDelegate.swift */,
-				C3701B261F37A6B2009BF366 /* Main.storyboard */,
 				C3701B5A1F381016009BF366 /* extensions */,
 				C3701B5F1F3822B5009BF366 /* themes */,
 				C3701B291F37A6B2009BF366 /* Assets.xcassets */,

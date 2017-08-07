@@ -16,7 +16,8 @@ class TipViewController: UIViewController {
     @IBOutlet weak var billAmountField:         UITextField!
     @IBOutlet weak var tipAmountLabel:          UILabel!
     @IBOutlet weak var totalAmountWithTipLabel: UILabel!
-    @IBOutlet weak var totalView: UIView!
+    @IBOutlet weak var totalView:               UIView!
+    @IBOutlet weak var totalDescriptionLabel:   UILabel!
     
     var settings: Settings {
         return Settings()
@@ -84,12 +85,13 @@ class TipViewController: UIViewController {
         
         view.backgroundColor = theme.backgroundColor
         navigationController?.navigationBar.barTintColor = theme.totalViewBackgroundColor
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: theme.billAmountTextColor]
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: theme.navigationBarTextColor]
         billAmountField.textColor = theme.billAmountTextColor
         tipPercentagesControl.tintColor = theme.tipSelectorBackgroundColor
         totalView.backgroundColor = theme.totalViewBackgroundColor
         tipAmountLabel.textColor = theme.tipAmountTextColor
         totalAmountWithTipLabel.textColor = theme.totalAmountTextColor
+        totalDescriptionLabel.textColor = theme.billAmountTextColor
     }
 }
 
