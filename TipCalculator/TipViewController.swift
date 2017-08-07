@@ -10,9 +10,9 @@ import UIKit
 
 class TipViewController: UIViewController {
 
-    @IBOutlet weak var tipPercentagesControl: UISegmentedControl!
-    @IBOutlet weak var billAmountField: UITextField!
-    @IBOutlet weak var tipAmountLabel: UILabel!
+    @IBOutlet weak var tipPercentagesControl:   UISegmentedControl!
+    @IBOutlet weak var billAmountField:         UITextField!
+    @IBOutlet weak var tipAmountLabel:          UILabel!
     @IBOutlet weak var totalAmountWithTipLabel: UILabel!
     
     var settings: Settings {
@@ -21,14 +21,16 @@ class TipViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTipPercentagesControl(tipPercentagesControl: tipPercentagesControl)
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
+        // Update view when we return from the Settings page
+        tipPercentagesControl.selectedSegmentIndex = settings.preferredTipIndex
+        updateTotalAmounts()
+    }
 
     @IBAction func tapOutsideTextField(_ sender: Any) {
         view.endEditing(true)
