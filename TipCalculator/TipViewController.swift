@@ -21,7 +21,9 @@ class TipViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setupTipPercentagesControl(tipPercentagesControl: tipPercentagesControl)
+        billAmountField.text = String(settings.lastAmount)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -35,14 +37,20 @@ class TipViewController: UIViewController {
 
     }
 
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        // Save the last bill amount
+        settings.lastAmount = Double(billAmountField.text!) ?? 0
+    }
+    
     @IBAction func tapOutsideTextField(_ sender: Any) {
         view.endEditing(true)
     }
     
     @IBAction func updateTotalAmounts() {
         let billAmount = Double(billAmountField.text!) ?? 0
-        let bill = Bill(amount: billAmount,
-                        tipIndex: tipPercentagesControl.selectedSegmentIndex)
+        let bill = Bill(amount: billAmount, tipIndex: tipPercentagesControl.selectedSegmentIndex)
 
         tipAmountLabel.text = String(format: "%.2f", bill.tipAmount)
         totalAmountWithTipLabel.text = String(format: "%.2f", bill.amountWithTip)
