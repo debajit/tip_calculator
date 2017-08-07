@@ -26,10 +26,13 @@ class TipViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        // Update view when we return from the Settings page
+        
+        // Update view with tip amounts calculated
         tipPercentagesControl.selectedSegmentIndex = settings.preferredTipIndex
         updateTotalAmounts()
+        
+        billAmountField.becomeFirstResponder()
+
     }
 
     @IBAction func tapOutsideTextField(_ sender: Any) {
