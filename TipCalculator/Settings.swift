@@ -13,11 +13,6 @@ import Foundation
 
 class Settings {
     
-    var preferredTipIndex: Int {
-        get { return integerSetting(key: Settings.PREFERRED_TIP_INDEX) }
-        set { saveSetting(key: Settings.PREFERRED_TIP_INDEX, value: newValue) }
-    }
-    
     var lastAmount: Double {
         get { return doubleSetting(key: Settings.LAST_AMOUNT) }
         set { saveSetting(key: Settings.LAST_AMOUNT, value: newValue) }
@@ -27,10 +22,21 @@ class Settings {
         get { return dateSetting(key: Settings.LAST_AMOUNT_EXPIRY_TIME) ?? Date(timeIntervalSince1970: TimeInterval(0)) }
         set { saveSetting(key: Settings.LAST_AMOUNT_EXPIRY_TIME, value: newValue) }
     }
+    
+    var preferredTipIndex: Int {
+        get { return integerSetting(key: Settings.PREFERRED_TIP_INDEX) }
+        set { saveSetting(key: Settings.PREFERRED_TIP_INDEX, value: newValue) }
+    }
 
+    var theme: ThemeName {
+        get { return ThemeName(rawValue: integerSetting(key: Settings.THEME))! }
+        set { saveSetting(key: Settings.THEME, value: newValue.rawValue) }
+    }
+    
     private static let PREFERRED_TIP_INDEX = "preferred_tip_index"
     private static let LAST_AMOUNT = "last_amount"
     private static let LAST_AMOUNT_EXPIRY_TIME = "last_amount_expiry_time"
+    private static let THEME = "theme"
     
     private let store = UserDefaults.standard
 

@@ -16,6 +16,7 @@ class TipViewController: UIViewController {
     @IBOutlet weak var billAmountField:         UITextField!
     @IBOutlet weak var tipAmountLabel:          UILabel!
     @IBOutlet weak var totalAmountWithTipLabel: UILabel!
+    @IBOutlet weak var totalView: UIView!
     
     var settings: Settings {
         return Settings()
@@ -36,7 +37,8 @@ class TipViewController: UIViewController {
         updateTotalAmounts()
         
         billAmountField.becomeFirstResponder()
-
+        
+        applyTheme()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -75,6 +77,19 @@ class TipViewController: UIViewController {
             billAmountField.text = String(settings.lastAmount)
             updateTotalAmounts()
         }
+    }
+    
+    private func applyTheme() {
+        let theme = Theme()
+        
+        view.backgroundColor = theme.backgroundColor
+        navigationController?.navigationBar.barTintColor = theme.totalViewBackgroundColor
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: theme.billAmountTextColor]
+        billAmountField.textColor = theme.billAmountTextColor
+        tipPercentagesControl.tintColor = theme.tipSelectorBackgroundColor
+        totalView.backgroundColor = theme.totalViewBackgroundColor
+        tipAmountLabel.textColor = theme.tipAmountTextColor
+        totalAmountWithTipLabel.textColor = theme.totalAmountTextColor
     }
 }
 

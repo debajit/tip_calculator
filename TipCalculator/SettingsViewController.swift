@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     @IBOutlet weak var tipPercentagesControl: UISegmentedControl!
+    @IBOutlet weak var themeControl: UISegmentedControl!
     
     var settings: Settings {
         return Settings()
@@ -20,6 +21,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
 
         setupTipPercentagesControl(tipPercentagesControl: tipPercentagesControl)
+        setupThemeControl(themeControl: themeControl)
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,6 +44,10 @@ class SettingsViewController: UIViewController {
         settings.preferredTipIndex = tipPercentagesControl.selectedSegmentIndex
     }
     
+    @IBAction func saveTheme() {
+        settings.theme = ThemeName(rawValue: themeControl.selectedSegmentIndex)!
+    }
+    
     private func setupTipPercentagesControl(tipPercentagesControl: UISegmentedControl) {
         tipPercentagesControl.removeAllSegments()
         
@@ -50,5 +56,9 @@ class SettingsViewController: UIViewController {
         }
         
         tipPercentagesControl.selectedSegmentIndex = settings.preferredTipIndex
+    }
+    
+    private func setupThemeControl(themeControl: UISegmentedControl) {
+        themeControl.selectedSegmentIndex = settings.theme.rawValue
     }
 }

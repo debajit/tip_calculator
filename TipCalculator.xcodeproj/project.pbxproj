@@ -19,6 +19,7 @@
 		C3701B571F37D161009BF366 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B561F37D161009BF366 /* Settings.swift */; };
 		C3701B591F380FFA009BF366 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B581F380FFA009BF366 /* Int.swift */; };
 		C3701B5C1F381D82009BF366 /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B5B1F381D82009BF366 /* Double.swift */; };
+		C3701B5E1F38229D009BF366 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3701B5D1F38229D009BF366 /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		C3701B561F37D161009BF366 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		C3701B581F380FFA009BF366 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		C3701B5B1F381D82009BF366 /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		C3701B5D1F38229D009BF366 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				C3701B221F37A6B2009BF366 /* AppDelegate.swift */,
 				C3701B261F37A6B2009BF366 /* Main.storyboard */,
 				C3701B5A1F381016009BF366 /* extensions */,
+				C3701B5F1F3822B5009BF366 /* themes */,
 				C3701B291F37A6B2009BF366 /* Assets.xcassets */,
 				C3701B2B1F37A6B2009BF366 /* LaunchScreen.storyboard */,
 				C3701B2E1F37A6B2009BF366 /* Info.plist */,
@@ -162,6 +165,14 @@
 				C3701B5B1F381D82009BF366 /* Double.swift */,
 			);
 			name = extensions;
+			sourceTree = "<group>";
+		};
+		C3701B5F1F3822B5009BF366 /* themes */ = {
+			isa = PBXGroup;
+			children = (
+				C3701B5D1F38229D009BF366 /* Theme.swift */,
+			);
+			name = themes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +315,7 @@
 				C3701B591F380FFA009BF366 /* Int.swift in Sources */,
 				C3701B541F37C7C6009BF366 /* SettingsViewController.swift in Sources */,
 				C3701B571F37D161009BF366 /* Settings.swift in Sources */,
+				C3701B5E1F38229D009BF366 /* Theme.swift in Sources */,
 				C3701B5C1F381D82009BF366 /* Double.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
