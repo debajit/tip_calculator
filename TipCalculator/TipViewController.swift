@@ -84,7 +84,7 @@ class TipViewController: UIViewController {
         let theme = Theme()
         
         view.backgroundColor = theme.backgroundColor
-        navigationController?.navigationBar.barTintColor = theme.totalViewBackgroundColor
+        navigationController?.navigationBar.barTintColor = theme.navigationBarBackgroundColor
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: theme.navigationBarTextColor]
         billAmountField.textColor = theme.billAmountTextColor
         tipPercentagesControl.tintColor = theme.tipSelectorBackgroundColor
