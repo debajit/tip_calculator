@@ -12,6 +12,8 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var tipPercentagesControl: UISegmentedControl!
     @IBOutlet weak var themeControl: UISegmentedControl!
+    @IBOutlet weak var preferredTipLabel: UILabel!
+    @IBOutlet weak var themeLabel: UILabel!
     
     var settings: Settings {
         return Settings()
@@ -24,6 +26,12 @@ class SettingsViewController: UIViewController {
         setupThemeControl(themeControl: themeControl)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        applyTheme()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,4 +69,24 @@ class SettingsViewController: UIViewController {
     private func setupThemeControl(themeControl: UISegmentedControl) {
         themeControl.selectedSegmentIndex = settings.theme.rawValue
     }
+    
+    @IBAction func themeChanged() {
+        applyTheme()
+    }
+    
+    private func applyTheme() {
+        let theme = Theme()
+        
+        view.backgroundColor = theme.settingsBackgroundColor
+        
+        navigationController?.navigationBar.barTintColor = theme.navigationBarBackgroundColor
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: theme.navigationBarTextColor]
+        navigationController?.navigationBar.barStyle = theme.navigationBarStyle
+        
+        tipPercentagesControl.tintColor = theme.settingsSegmentControlTintColor
+        themeControl.tintColor = theme.settingsSegmentControlTintColor
+        preferredTipLabel.textColor = theme.navigationBarTextColor
+        themeLabel.textColor = theme.navigationBarTextColor
+    }
+    
 }

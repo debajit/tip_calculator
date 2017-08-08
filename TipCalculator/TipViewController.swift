@@ -53,6 +53,12 @@ class TipViewController: UIViewController {
         print("expiry time = \(settings.lastAmountExpiryTime)")
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
+    }
+    
     @IBAction func tapOutsideTextField(_ sender: Any) {
         view.endEditing(true)
     }
@@ -90,6 +96,7 @@ class TipViewController: UIViewController {
         navigationController?.navigationBar.barTintColor = theme.navigationBarBackgroundColor
         navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: theme.navigationBarTextColor]
         navigationController?.navigationBar.barStyle = theme.navigationBarStyle
+        navigationController?.navigationBar.tintColor = theme.settingsSegmentControlTintColor // Back button
         
         billAmountField.keyboardAppearance = theme.keyboardAppearance
         

@@ -25,7 +25,11 @@ class Theme {
     var navigationBarBackgroundColor: UIColor
     var navigationBarTextColor: UIColor
     var navigationBarStyle: UIBarStyle
+    var backButtonTextColor: UIColor
     var keyboardAppearance: UIKeyboardAppearance
+    var settingsBackgroundColor: UIColor
+    var settingsTextColor: UIColor
+    var settingsSegmentControlTintColor: UIColor
     
     static var settings: Settings { return Settings() }
     
@@ -45,8 +49,14 @@ class Theme {
             navigationBarBackgroundColor = totalViewBackgroundColor
             navigationBarTextColor = #colorLiteral(red: 0.1777966321, green: 0.1224308088, blue: 0.02345803007, alpha: 1)
             navigationBarStyle = UIBarStyle.default
+            backButtonTextColor = #colorLiteral(red: 0.3872439265, green: 0.2564357817, blue: 0.02039210312, alpha: 1)
             
             keyboardAppearance = .default
+            
+            settingsBackgroundColor = backgroundColor
+            settingsTextColor = textColor
+            settingsSegmentControlTintColor = tipSelectorBackgroundColor
+            
             
         case .dark:
             
@@ -61,8 +71,13 @@ class Theme {
             navigationBarBackgroundColor = #colorLiteral(red: 0.3924831152, green: 0.1225931272, blue: 0.148321569, alpha: 1) // #colorLiteral(red: 0.1419405215, green: 0.06544311544, blue: 0.1492374119, alpha: 1)
             navigationBarTextColor = #colorLiteral(red: 0.9266857505, green: 0.8834068179, blue: 0.8121024966, alpha: 1)
             navigationBarStyle = UIBarStyle.black
+            backButtonTextColor = #colorLiteral(red: 0.5988010168, green: 0.4737485647, blue: 0.4850695133, alpha: 1)
             
             keyboardAppearance = .dark
+            
+            settingsBackgroundColor = totalViewBackgroundColor
+            settingsTextColor = tipSelectorBackgroundColor
+            settingsSegmentControlTintColor = #colorLiteral(red: 0.7905452497, green: 0.6795757847, blue: 0.70194493, alpha: 1)
         }
         
     }
