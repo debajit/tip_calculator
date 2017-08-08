@@ -28,6 +28,7 @@ class TipViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupInputField()
         setupTipPercentagesControl(tipPercentagesControl: tipPercentagesControl)
         restoreRecentAmount()
     }
@@ -88,6 +89,11 @@ class TipViewController: UIViewController {
         }
     }
     
+    private func setupInputField() {
+        let locale = Locale.current
+        billAmountField.placeholder = locale.currencySymbol
+    }
+    
     private func applyTheme() {
         let theme = Theme()
         
@@ -108,7 +114,6 @@ class TipViewController: UIViewController {
         equalsLabel.textColor = theme.tipAmountTextColor
         totalAmountWithTipLabel.textColor = theme.totalAmountTextColor
         totalDescriptionLabel.textColor = theme.billAmountTextColor
-        
     }
 }
 
