@@ -64,7 +64,7 @@ the view is loaded, the view objects are instantiated and bindings
 (i.e. observers) are set up between the view objects and the
 controller actions and outlets.
 
-Question 2: "Swift
+**Question 2:**  "Swift
 uses
 [Automatic Reference Counting](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID49) (ARC),
 which is not a garbage collector, to manage memory. Can you explain
@@ -72,7 +72,18 @@ how you can get a strong reference cycle for closures? (There's a
 section explaining this concept in the link, how would you summarize
 as simply as possible?)"
 
-**Answer:** [Enter your answer here in a paragraph or two].
+**Answer:**
+
+A strong reference cycle for closures would happen when a closure and
+another reference type hold a strong reference to one another
+(resulting in a cyclical reference). Such a case may happen when for
+instance, a closure is assigned to a class property, and inside the
+closure there is a call to one of the class methods, or one of the
+class properties. Because of this, the closure “captures” the instance
+of the class, meaning that it holds a reference to the state of the
+class instance (properties etc). Since the class instance also holds a
+reference back to this closure, this results in a strong reference
+cycle for the closure.
 
 
 ## License
