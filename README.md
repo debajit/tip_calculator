@@ -20,7 +20,7 @@ The following **optional** features are implemented:
 * [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
-- [x] Light and dark theme
+- [x] Light and dark theme, configurable as a user preference.
 
 Some code highlights:
 - [x] Separate Bill model class for tip calculation business logic, so that presentation code is cleanly decoupled from the business logic, which becomes easily unit-testable. The tip amounts themselves, for instance, are controlled by a simple array in this class.
@@ -45,7 +45,24 @@ developer? Bonus: any idea how they are being implemented under the
 hood? (It might give you some ideas if you right-click on the
 Storyboard and click Open As->Source Code")
 
-**Answer:** [Enter your answer here in a paragraph or two].
+**Answer:**
+
+I found the iOS app development platform to be mature and easy to
+learn. In half a day I was able to get started with Swift (which was
+completely new to me), and create a decent iPhone application in half
+a day, which was a pleasant surprise.
+
+Outlets are references to view objects, that allow them to be
+programmatically controlled from a controller. Actions are methods
+that are invoked (in the controller) when an event happens on the
+associated view object.
+
+The metadata for an outlet or action is saved in the view XML (i.e. in
+the storyboard), and the code in the ViewController. The view XML
+references the right ViewController and its method/property name. When
+the view is loaded, the view objects are instantiated and bindings
+(i.e. observers) are set up between the view objects and the
+controller actions and outlets.
 
 Question 2: "Swift
 uses
