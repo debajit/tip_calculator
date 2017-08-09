@@ -20,11 +20,40 @@ The following **optional** features are implemented:
 * [x] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
 
 The following **additional** features are implemented:
-- [x] Light and dark theme, configurable as a user preference.
 
-Some code highlights:
-- [x] Separate Bill model class for tip calculation business logic, so that presentation code is cleanly decoupled from the business logic, which becomes easily unit-testable. The tip amounts themselves, for instance, are controlled by a simple array in this class.
-- [x] Settings class with user preference properties that encapsulates UserDefaults reading and writing.
+- Light and dark theme, configurable as a user preference
+  persisted in UserDefaults. Each theme also takes into account the
+  status bar style, navigation bar style, and the keyboard tint color
+  for a harmonious look and feel.
+
+- Clear button for easily clearing the bill amount with a single tap.
+
+- Shrinkable font size for large numbers. When large numbers with many
+  digits are entered, the font size used to render them decreases so
+  that the entire number is displayed without truncation.
+
+- A locale-specific currency symbol is displayed when no bill amount
+  is displayed
+
+Some **code highlights**:
+
+* Separate Bill model class for tip calculation business logic, so
+  that presentation code is cleanly decoupled from the business logic,
+  which becomes easily unit-testable. The tip amounts themselves, for
+  instance, are controlled by a simple array in this class, so they
+  are easy to update.
+
+* Settings class with user preference properties that encapsulates
+  UserDefaults reading and writing. This makes it easy to save any
+  property/value as a user preference, with minimal code.
+
+* Extension to ``Double`` to add ``Double.asLocaleCurrency`` which
+  makes it easy and succinct to convert any double value to a
+  locale-formatted currency string.
+
+* Extensions to Int to allow writing code like `10.minutes` (which
+  could be passed in to TimeInterval), for readability.
+
 
 ## Video Walkthrough
 
@@ -84,6 +113,12 @@ of the class, meaning that it holds a reference to the state of the
 class instance (properties etc). Since the class instance also holds a
 reference back to this closure, this results in a strong reference
 cycle for the closure.
+
+
+## Notes
+
+I am working on the animation, and will update this code repository as
+soon as I'm done.
 
 
 ## License
